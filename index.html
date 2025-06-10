@@ -30,12 +30,38 @@
     scroll-behavior: smooth;
   }
 
-  .bg-image {
+  /*.bg-image {
     background-image: url('images/shivling-abhishek1.jpg');
     background-size: cover;
     background-position: center;
     position: relative;
-  }
+  }*/
+
+  /*.bg-image {
+    background-image: url('images/shivling-abhishek1.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+}*/
+
+.bg-image {
+    background-image: url('images/shivling-abhishek1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    height: 100vh; /* Full screen height for dramatic effect */
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); /* Better text visibility */
+    padding: 2rem;
+}
+
+
 
   .bg-image::before {
     content: '';
