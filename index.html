@@ -12,149 +12,113 @@
 
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Vollkorn:wght@400;700&display=swap" rel="stylesheet">
-
-  <!-- AOS (Animate On Scroll) CSS -->
+  <!-- AOS -->
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="style.css" />
+  <!-- Bootstrap Icons -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
 
+  <style>
+    body {
+      font-family: 'Vollkorn', serif;
+      scroll-behavior: smooth;
+    }
+
+    .bg-image {
+      background-image: url('images/shivling-abhishek1.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      position: relative;
+      height: 100vh;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+      padding: 2rem;
+    }
+
+    @media (max-width: 768px) {
+      .bg-image {
+        height: auto;
+        padding: 6rem 1rem;
+        text-align: center;
+      }
+    }
+
+    .bg-image::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 1;
+    }
+
+    .bg-image .container {
+      position: relative;
+      z-index: 2;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .card,
+    .ritual-box {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover,
+    .ritual-box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    img.rounded:hover {
+      transform: scale(1.03);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .ritual-icon {
+      color: #f39c12;
+    }
+
+    .faq-section h5 {
+      cursor: pointer;
+    }
+
+    .btn-danger:hover {
+      background-color: #f39c12;
+      border-color: #f39c12;
+    }
+
+    .card-title {
+      font-size: 1.5rem;
+      color: #333;
+      font-weight: 600;
+    }
+
+    .card-text {
+      font-size: 1rem;
+      color: #555;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 768px) {
+      h1.display-4 {
+        font-size: 2rem;
+      }
+      .lead {
+        font-size: 1rem;
+      }
+    }
+  </style>
 </head>
-<style>
-  body {
-    font-family: 'Vollkorn', serif;
-    scroll-behavior: smooth;
-  }
-
-  /*.bg-image {
-    background-image: url('images/shivling-abhishek1.jpg');
-    background-size: cover;
-    background-position: center;
-    position: relative;
-  }*/
-
-  /*.bg-image {
-    background-image: url('images/shivling-abhishek1.jpg');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    position: relative;
-}*/
-
-.bg-image {
-    background-image: url('images/shivling-abhishek1.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    position: relative;
-    height: 100vh; /* Full screen height for dramatic effect */
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); /* Better text visibility */
-    padding: 2rem;
-}
-
-
-
-  .bg-image::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 1;
-  }
-
-  .bg-image .container {
-    position: relative;
-    z-index: 2;
-  }
-
-  .card {
-    transition: transform 0.3s ease;
-  }
-
-  .card:hover {
-    transform: scale(1.05);
-  }
-
-  img.rounded {
-    transition: 0.4s;
-    cursor: pointer;
-  }
-
-  img.rounded:hover {
-    transform: scale(1.03);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  }
-
-  .ritual-box {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-
-  .ritual-box:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-  }
-
-  .ritual-icon {
-    color: #f39c12;
-  }
-
-  .faq-section h5 {
-    cursor: pointer;
-  }
-
-  /* Hover Effect for Ritual Cards */
-  .ritual-box:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Adding animation on page load */
-  .ritual-box {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-
-  /* Card hover effect */
-  .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Button Hover effect */
-  .btn-danger:hover {
-    background-color: #f39c12;
-    border-color: #f39c12;
-  }
-  
-  /* Blog title styles */
-  .card-title {
-    font-size: 1.5rem;
-    color: #333;
-    font-weight: 600;
-  }
-  
-  /* Blog text styles */
-  .card-text {
-    font-size: 1rem;
-    color: #555;
-    line-height: 1.6;
-  }
-  
-  /* Apply smooth transition for all cards */
-  .card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-</style>
-
 <body>
 
 <!-- Navbar -->
@@ -180,9 +144,8 @@
   </div>
 </nav>
 
-
 <!-- Hero Section -->
-<section id="home" class="bg-image text-white text-center d-flex align-items-center" style="height: 90vh;">
+<section id="home" class="bg-image text-white text-center d-flex align-items-center">
   <div class="container">
     <h1 class="display-4 fw-bold" data-aos="fade-down">Om Namah Shivaya</h1>
     <p class="lead" data-aos="fade-up">Welcome to the Divine Shiv Temple</p>
@@ -193,20 +156,17 @@
 <section id="about" class="py-5" style="background-color: #f9f3e1; background-image: url('images/shivling-abhishek.jpg'); background-size: cover; background-position: center;" data-aos="fade-up">
   <div class="container">
     <h2 class="text-center text-dark mb-5 display-4" style="font-family: 'Vollkorn', serif; font-weight: bold;">About the Temple</h2>
-    
-    <!-- Description with Cards -->
     <div class="row justify-content-center">
-      <div class="col-md-6 col-lg-4 mb-4">
-        <div class="card shadow-lg border-0 rounded-3 p-4 text-center" style="background-color: #ffffff;">
+      <div class="col-12 col-md-6 col-lg-4 mb-4">
+        <div class="card shadow-lg border-0 rounded-3 p-4 text-center">
           <div class="card-body">
             <i class="bi bi-building text-primary mb-3" style="font-size: 3rem;"></i>
             <p class="card-text" style="font-size: 1.1rem;">Shiv Temple is a sacred place dedicated to Lord Shiva. Built in traditional Indian architecture, it stands as a symbol of peace, devotion, and spirituality.</p>
           </div>
         </div>
       </div>
-      
-      <div class="col-md-6 col-lg-4 mb-4">
-        <div class="card shadow-lg border-0 rounded-3 p-4 text-center" style="background-color: #ffffff;">
+      <div class="col-12 col-md-6 col-lg-4 mb-4">
+        <div class="card shadow-lg border-0 rounded-3 p-4 text-center">
           <div class="card-body">
             <i class="bi bi-house-door text-primary mb-3" style="font-size: 3rem;"></i>
             <p class="card-text" style="font-size: 1.1rem;">Located in the heart of Unnao, the temple welcomes devotees for daily rituals, spiritual programs, and major festivals like Maha Shivratri.</p>
@@ -214,280 +174,206 @@
         </div>
       </div>
     </div>
-    
-    <!-- Text Section -->
     <div class="text-center mt-4">
       <p class="lead text-muted" style="font-size: 1.1rem; font-style: italic;">"A place of divine worship and spiritual connection. Visit us and experience the serenity and blessings of Lord Shiva."</p>
     </div>
   </div>
 </section>
 
-
 <!-- Rituals -->
 <section id="rituals" class="py-5" style="background: linear-gradient(to right, #f9e4b7, #f2d2a1);" data-aos="fade-right">
   <div class="container">
-    <h2 class="text-center mb-5 display-4 fw-bold text-primary" style="font-family: 'Vollkorn', serif;">🕉️ Daily Rituals</h2>
-    <div class="row g-4 text-center">
-      <!-- Morning Aarti -->
-      <div class="col-md-3">
-        <div class="ritual-box shadow-lg p-4 rounded-3 bg-white h-100" style="transition: transform 0.3s ease, box-shadow 0.3s ease;">
-          <div class="ritual-icon mb-3 fs-1" style="color: #f39c12;">🌅</div>
-          <h5 class="fw-semibold" style="font-size: 1.2rem;">Morning Aarti</h5>
-          <p class="text-muted" style="font-size: 1.1rem;">6:00 AM</p>
-        </div>
-      </div>
-      <!-- Shiv Abhishekam -->
-      <div class="col-md-3">
-        <div class="ritual-box shadow-lg p-4 rounded-3 bg-white h-100" style="transition: transform 0.3s ease, box-shadow 0.3s ease;">
-          <div class="ritual-icon mb-3 fs-1" style="color: #f39c12;">🕉️</div>
-          <h5 class="fw-semibold" style="font-size: 1.2rem;">Shiv Abhishekam</h5>
-          <p class="text-muted" style="font-size: 1.1rem;">8:00 AM</p>
-        </div>
-      </div>
-      <!-- Evening Aarti -->
-      <div class="col-md-3">
-        <div class="ritual-box shadow-lg p-4 rounded-3 bg-white h-100" style="transition: transform 0.3s ease, box-shadow 0.3s ease;">
-          <div class="ritual-icon mb-3 fs-1" style="color: #f39c12;">🌇</div>
-          <h5 class="fw-semibold" style="font-size: 1.2rem;">Evening Aarti</h5>
-          <p class="text-muted" style="font-size: 1.1rem;">7:00 PM</p>
-        </div>
-      </div>
-      <!-- Special Poojas -->
-      <div class="col-md-3">
-        <div class="ritual-box shadow-lg p-4 rounded-3 bg-white h-100" style="transition: transform 0.3s ease, box-shadow 0.3s ease;">
-          <div class="ritual-icon mb-3 fs-1" style="color: #f39c12;">🌟</div>
-          <h5 class="fw-semibold" style="font-size: 1.2rem;">Special Poojas</h5>
-          <p class="text-muted" style="font-size: 1.1rem;">Book online</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Events -->
-<section id="events" class="py-5" data-aos="zoom-in-up">
-  <div class="container">
-    <h2 class="text-center mb-4">Upcoming Events</h2>
+    <h2 class="text-center mb-5 display-4 fw-bold text-primary" style="font-family: 'Vollkorn', serif;">Daily Rituals</h2>
     <div class="row justify-content-center">
-      <!-- Masik Shivaratri Event -->
-      <div class="col-md-6 mt-4">
-        <div class="card shadow-sm">
+      <div class="col-12 col-sm-6 col-lg-4 mb-4">
+        <div class="p-4 bg-white rounded shadow ritual-box text-center">
+          <i class="bi bi-sunrise ritual-icon" style="font-size: 2rem;"></i>
+          <h4 class="mt-3">Morning Aarti</h4>
+          <p class="text-muted">Everyday at 6:00 AM - Welcome the new day with devotion through Morning Aarti and Abhishekam to Lord Shiva.</p>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-lg-4 mb-4">
+        <div class="p-4 bg-white rounded shadow ritual-box text-center">
+          <i class="bi bi-droplet-half ritual-icon" style="font-size: 2rem;"></i>
+          <h4 class="mt-3">Abhishekam</h4>
+          <p class="text-muted">Daily Abhishekam with water, milk, honey and ghee performed with Vedic chants at 7:00 AM and 6:00 PM.</p>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-lg-4 mb-4">
+        <div class="p-4 bg-white rounded shadow ritual-box text-center">
+          <i class="bi bi-sunset ritual-icon" style="font-size: 2rem;"></i>
+          <h4 class="mt-3">Evening Aarti</h4>
+          <p class="text-muted">Join us at 7:00 PM for a soulful Evening Aarti followed by bhajans and prasad distribution.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Events Section -->
+<section id="events" class="py-5 bg-light" data-aos="fade-up">
+  <div class="container">
+    <h2 class="text-center mb-5 display-4 fw-bold text-danger">Upcoming Events</h2>
+    <div class="row">
+      <div class="col-12 col-md-6 col-lg-4 mb-4">
+        <div class="card border-0 shadow h-100">
+          <img src="images/event-shivratri.jpg" class="card-img-top" alt="Maha Shivratri">
           <div class="card-body">
-            <h5 class="card-title">Masik Shivaratri</h5>
-            <p class="card-text">Night-long vigil, Rudrabhishek, and mantra chanting at major Shiv temples.</p>
-            <p class="text-muted">Date: May 25, 2025</p>
+            <h5 class="card-title">Maha Shivratri</h5>
+            <p class="card-text">Join us on Maha Shivratri for an all-night vigil, chanting, and special Abhishekam from 8 PM till 5 AM.</p>
           </div>
         </div>
       </div>
-
-      <!-- Bada Mangal Event -->
-      <div class="col-md-6 mt-4">
-        <div class="card shadow-sm">
+      <div class="col-12 col-md-6 col-lg-4 mb-4">
+        <div class="card border-0 shadow h-100">
+          <img src="images/event-abhishek.jpg" class="card-img-top" alt="Monthly Rudrabhishek">
           <div class="card-body">
-            <h5 class="card-title">Bada Mangal</h5>
-            <p class="card-text">Community feasts, Hanuman worship, and cultural programs across Lucknow.</p>
-            <p class="text-muted">Dates: May 20, 27, June 3, 10, 17, 2025</p>
+            <h5 class="card-title">Monthly Rudrabhishek</h5>
+            <p class="card-text">Special Rudrabhishek is performed every Pradosh Vrat. Devotees can participate by prior registration.</p>
           </div>
         </div>
       </div>
     </div>
   </div>
 </section>
-
-
 
 <!-- Gallery -->
-<section id="gallery" class="bg-light py-5" data-aos="fade-left">
+<section id="gallery" class="py-5 bg-white" data-aos="fade-up">
   <div class="container">
-    <h2 class="text-center mb-4">Gallery</h2>
+    <h2 class="text-center mb-5 display-4 fw-bold text-primary">Temple Gallery</h2>
     <div class="row g-3">
-      <div class="col-md-4"><img src="images/hanuman1.jpg" class="img-fluid rounded" alt="Hanuman Ji" data-aos="zoom-in"></div>
-      <div class="col-md-4"><img src="images/ganesh.png" class="img-fluid rounded" alt="Ganesh Ji" data-aos="zoom-in"></div>
-      <div class="col-md-4"><img src="images/temple.png" class="img-fluid rounded" alt="Temple" data-aos="zoom-in"></div>
+      <div class="col-6 col-md-4 col-lg-3">
+        <img src="images/gallery1.jpg" class="img-fluid rounded shadow-sm" alt="Temple View">
+      </div>
+      <div class="col-6 col-md-4 col-lg-3">
+        <img src="images/gallery2.jpg" class="img-fluid rounded shadow-sm" alt="Aarti">
+      </div>
+      <div class="col-6 col-md-4 col-lg-3">
+        <img src="images/gallery3.jpg" class="img-fluid rounded shadow-sm" alt="Abhishekam">
+      </div>
+      <div class="col-6 col-md-4 col-lg-3">
+        <img src="images/gallery4.jpg" class="img-fluid rounded shadow-sm" alt="Devotees">
+      </div>
     </div>
   </div>
 </section>
 
-<section id="blog" class="py-5" style="background: linear-gradient(to right, #f9e4b7, #f2d2a1);" data-aos="fade-up">
+<!-- Blog -->
+<section id="blog" class="py-5 bg-light" data-aos="fade-left">
   <div class="container">
-    <h2 class="text-center mb-4 text-danger fw-bold" style="font-family: 'Vollkorn', serif;">Blog</h2>
+    <h2 class="text-center mb-5 display-4 fw-bold text-dark">Spiritual Blog</h2>
     <div class="row">
-      
-      <!-- Blog Card 1 -->
-      <div class="col-md-6 mb-4">
-        <div class="card shadow-lg rounded-3 border-0">
-          <img src="images/maha-shivratri.png" class="card-img-top" alt="Maha Shivratri" style="height: 200px; object-fit: cover;">
+      <div class="col-12 col-md-6 mb-4">
+        <div class="card h-100 border-0 shadow-sm">
           <div class="card-body">
-            <h5 class="card-title fs-4 fw-bold">📰 Importance of Maha Shivratri</h5>
-            <p class="card-text">Maha Shivratri is one of the most sacred nights in Hinduism. Devotees observe fast, chant mantras, and offer prayers to Lord Shiva throughout the night.</p>
-            <a href="#" class="btn btn-danger">Read More</a>
+            <h5 class="card-title">Significance of Rudrabhishek</h5>
+            <p class="card-text">Discover why Rudrabhishek is one of the most powerful poojas for Lord Shiva and how it blesses devotees with peace and prosperity.</p>
+            <a href="#" class="btn btn-sm btn-danger">Read More</a>
           </div>
         </div>
       </div>
-      
-      <!-- Blog Card 2 -->
-      <div class="col-md-6 mb-4">
-        <div class="card shadow-lg rounded-3 border-0">
-          <img src="images/rudrabhishek.png" class="card-img-top" alt="Rudrabhishek" style="height: 200px; object-fit: cover;">
+      <div class="col-12 col-md-6 mb-4">
+        <div class="card h-100 border-0 shadow-sm">
           <div class="card-body">
-            <h5 class="card-title fs-4 fw-bold">🪔 Power of Rudrabhishek</h5>
-            <p class="card-text">Rudrabhishek is a powerful Vedic ritual for health, wealth, and inner peace. It invokes divine energies through sacred offerings to the Shivling.</p>
-            <a href="#" class="btn btn-danger">Read More</a>
+            <h5 class="card-title">Understanding Om Namah Shivaya</h5>
+            <p class="card-text">Learn the deeper meaning and benefits of chanting the most sacred mantra dedicated to Lord Shiva.</p>
+            <a href="#" class="btn btn-sm btn-danger">Read More</a>
           </div>
         </div>
       </div>
-      
     </div>
   </div>
 </section>
 
-<!-- FAQ -->
-<section id="faq" class="bg-light py-5" data-aos="fade-up" itemscope itemtype="https://schema.org/FAQPage">
+<!-- FAQ Section -->
+<section id="faq" class="py-5 bg-white faq-section" data-aos="fade-up">
   <div class="container">
-    <h2 class="text-center mb-4">Frequently Asked Questions</h2>
+    <h2 class="text-center mb-5 display-4 fw-bold text-danger">Frequently Asked Questions</h2>
     <div class="accordion" id="faqAccordion">
-      
-      <div class="accordion-item" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
-        <h5 class="accordion-header">
-          <button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#faq1">
-            <span itemprop="name">What are the temple's opening hours?</span>
+      <div class="accordion-item">
+        <h5 class="accordion-header" id="faq1">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqOne">
+            What are the temple opening hours?
           </button>
         </h5>
-        <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
-          <div class="accordion-body" itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-            <span itemprop="text">The temple is open from 5:30 AM to 8:30 PM daily.</span>
-          </div>
+        <div id="faqOne" class="accordion-collapse collapse show">
+          <div class="accordion-body">The temple is open from 5:00 AM to 12:00 PM and 4:00 PM to 9:00 PM daily.</div>
         </div>
       </div>
-
-      <div class="accordion-item" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
-        <h5 class="accordion-header">
-          <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq2">
-            <span itemprop="name">Can I book a pooja online?</span>
+      <div class="accordion-item">
+        <h5 class="accordion-header" id="faq2">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqTwo">
+            Can I perform special poojas?
           </button>
         </h5>
-        <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-          <div class="accordion-body" itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-            <span itemprop="text">Yes, you can book Rudrabhishek and other poojas through our website or contact form.</span>
-          </div>
+        <div id="faqTwo" class="accordion-collapse collapse">
+          <div class="accordion-body">Yes, you can book special poojas like Rudrabhishek or Mahamrityunjaya Jaap. Contact the temple office for details.</div>
         </div>
       </div>
-
     </div>
   </div>
 </section>
 
 <!-- Testimonials -->
-<!-- Testimonials -->
-<!-- Testimonials -->
-<section id="testimonials" class="py-5" style="background: linear-gradient(to right, #ff7e5f, #feb47b);" data-aos="fade-up">
+<section id="testimonials" class="py-5 bg-light" data-aos="fade-up">
   <div class="container">
-    <h2 class="text-center text-white mb-5 display-4">What Our Devotees Say</h2>
-    <div class="row g-4 justify-content-center">
-
-      <!-- Testimonial 1 -->
-      <div class="col-md-4">
-        <div class="card shadow-lg h-100 border-0 rounded-3" style="background-color: #ffffff;">
-          <div class="card-body text-center p-4">
-            <div class="avatar mb-3">
-              <img src="images/abhi (3).jpg" alt="Hyen" class="rounded-circle" style="width: 100px; height: 100px; object-fit: cover;">
-            </div>
-            <p class="card-text" itemprop="reviewBody" style="font-size: 1.2rem; font-style: italic;">“The morning aarti at Shiv Mandir fills me with divine energy. The temple is peaceful and beautifully maintained.”</p>
-            <h6 class="mt-3 mb-0" itemprop="author" itemscope itemtype="https://schema.org/Person">
-              <span itemprop="name" style="font-weight: 600; font-size: 1.1rem;">Hyen</span>
-            </h6>
-            <p class="text-muted" itemprop="location">Kanpur, Uttar Pradesh</p>
-          </div>
+    <h2 class="text-center mb-5 display-4 fw-bold text-primary">Devotees Speak</h2>
+    <div class="row">
+      <div class="col-12 col-md-6 mb-4">
+        <div class="p-4 bg-white rounded shadow text-center">
+          <p class="text-muted">"The spiritual energy at Shiv Temple is unmatched. I feel at peace every time I visit."</p>
+          <h6 class="fw-bold mt-3">– Ramesh Tiwari</h6>
         </div>
       </div>
-
-      <!-- Testimonial 2 -->
-      <div class="col-md-4">
-        <div class="card shadow-lg h-100 border-0 rounded-3" style="background-color: #ffffff;">
-          <div class="card-body text-center p-4">
-            <div class="avatar mb-3">
-              <img src="images/abhi (2).jpg" alt="Unat" class="rounded-circle" style="width: 100px; height: 100px; object-fit: cover;">
-            </div>
-            <p class="card-text" itemprop="reviewBody" style="font-size: 1.2rem; font-style: italic;">“I attended the Rudrabhishek and was deeply moved. The priests and volunteers are very humble and helpful.”</p>
-            <h6 class="mt-3 mb-0" itemprop="author" itemscope itemtype="https://schema.org/Person">
-              <span itemprop="name" style="font-weight: 600; font-size: 1.1rem;">Unat</span>
-            </h6>
-            <p class="text-muted" itemprop="location">Lucknow, Uttar Pradesh</p>
-          </div>
+      <div class="col-12 col-md-6 mb-4">
+        <div class="p-4 bg-white rounded shadow text-center">
+          <p class="text-muted">"Wonderful atmosphere and very well maintained. Maha Shivratri celebration was divine."</p>
+          <h6 class="fw-bold mt-3">– Anjali Verma</h6>
         </div>
       </div>
-
-      <!-- Testimonial 3 -->
-      <div class="col-md-4">
-        <div class="card shadow-lg h-100 border-0 rounded-3" style="background-color: #ffffff;">
-          <div class="card-body text-center p-4">
-            <div class="avatar mb-3">
-              <img src="images/abhi (1).jpg" alt="Abhi" class="rounded-circle" style="width: 100px; height: 100px; object-fit: cover;">
-            </div>
-            <p class="card-text" itemprop="reviewBody" style="font-size: 1.2rem; font-style: italic;">“Maha Shivratri celebration here was a divine experience. The bhajans and decorations were beautiful.”</p>
-            <h6 class="mt-3 mb-0" itemprop="author" itemscope itemtype="https://schema.org/Person">
-              <span itemprop="name" style="font-weight: 600; font-size: 1.1rem;">Abhi</span>
-            </h6>
-            <p class="text-muted" itemprop="location">Unnao, Uttar Pradesh</p>
-          </div>
-        </div>
-      </div>
-
     </div>
   </div>
 </section>
-
-
-
 
 <!-- Contact -->
-<section id="contact" class="py-4 bg-light" data-aos="flip-up">
+<section id="contact" class="py-5" data-aos="fade-up">
   <div class="container">
-    <h2 class="text-center mb-4 text-danger fw-bold">📞 Contact Us</h2>
-
-    <!-- Outer Border Box -->
-    <div class="border rounded p-4 bg-white shadow-sm">
-      <div class="row text-center">
-
-        <!-- Address -->
-        <div class="col-md-4 border-end">
-          <i class="bi bi-geo-alt-fill fs-4 text-danger"></i>
-          <h6 class="fw-semibold mt-2">Address</h6>
-          <p class="mb-0 small">Shiv Mandir, RKD Inter College Road, Korari Kalan Unnao Uttar Pradesh</p>
-        </div>
-
-        <!-- Phone -->
-        <div class="col-md-4 border-end">
-          <i class="bi bi-telephone-fill fs-4 text-danger"></i>
-          <h6 class="fw-semibold mt-2">Phone</h6>
-          <p class="mb-0 small">+91-7526******</p>
-        </div>
-
-        <!-- Email -->
-        <div class="col-md-4">
-          <i class="bi bi-envelope-fill fs-4 text-danger"></i>
-          <h6 class="fw-semibold mt-2">Email</h6>
-          <p class="mb-0 small">bajpaitanu9169@gmail.com</p>
-        </div>
-
+    <h2 class="text-center mb-5 display-4 fw-bold text-danger">Contact Us</h2>
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-8">
+        <form>
+          <div class="mb-3">
+            <label for="name" class="form-label">Your Name</label>
+            <input type="text" class="form-control" id="name" placeholder="Full Name" required>
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Your Email</label>
+            <input type="email" class="form-control" id="email" placeholder="name@example.com" required>
+          </div>
+          <div class="mb-3">
+            <label for="msg" class="form-label">Your Message</label>
+            <textarea class="form-control" id="msg" rows="4" placeholder="How can we help you?" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-danger">Send Message</button>
+        </form>
       </div>
     </div>
-
   </div>
 </section>
 
-
-
 <!-- Footer -->
-<footer class="bg-danger text-white text-center py-3">
-  <p class="mb-0">&copy; 2025 Shiv Temple | Om Namah Shivaya</p>
+<footer class="py-4 bg-danger text-white text-center">
+  <div class="container">
+    <p class="mb-0">© 2025 Shiv Temple, Unnao. All rights reserved.</p>
+    <small>Developed with ❤️ by Temple Committee</small>
+  </div>
 </footer>
 
-<!-- Bootstrap & AOS JS -->
+<!-- JS Scripts -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 <script>
   AOS.init({ duration: 1000, once: true });
 </script>
+
 </body>
 </html>
