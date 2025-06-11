@@ -25,6 +25,7 @@
       scroll-behavior: smooth;
     }
 
+
     .bg-image {
       background-image: url('images/shivling-abhishek1.jpg');
       background-size: cover;
@@ -62,6 +63,18 @@
       position: relative;
       z-index: 2;
     }
+
+    @media (max-width: 768px) {
+  .bg-image {
+    height: auto;
+    padding: 6rem 1rem;
+    text-align: center;
+    background-size: contain;
+    background-position: top;
+    background-repeat: no-repeat;
+  }
+}
+
 
     img {
       max-width: 100%;
