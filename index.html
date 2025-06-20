@@ -57,20 +57,21 @@
 
   /* ✅ Fixed mobile spacing issue */
   @media (max-width: 768px) {
-    .bg-image {
-      min-height: auto;
-      height: auto;
-      padding: 6rem 1rem;
-      text-align: center;
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-    }
-
-    .bg-image::before {
-      background: rgba(0, 0, 0, 0.1);
-    }
+  .bg-image {
+    min-height: auto;
+    height: auto;
+    padding: 6rem 1rem;
+    text-align: center;
+    background-size: contain;         /* ✅ Show full image without cropping */
+    background-position: top center;  /* ✅ Align image to top */
+    background-repeat: no-repeat;
   }
+
+  .bg-image::before {
+    background: rgba(0, 0, 0, 0.1);
+  }
+}
+
 
   img {
     max-width: 100%;
