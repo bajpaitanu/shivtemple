@@ -480,7 +480,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       if (response.ok) {
         alertBox.className = "alert alert-success";
-        alertBox.innerText = "✅ Message sent successfully!";
+        alertBox.innerText = "✅ Message sent successfully! We will contact you shortly.";
         form.reset();
       } else {
         throw new Error("Webhook error");
