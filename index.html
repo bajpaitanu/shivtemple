@@ -132,6 +132,24 @@
   height: 250px;   /* sab images ki same height */
   object-fit: cover;
 }
+  .event-img {
+    height: 250px;       /* sab images ki same height */
+    object-fit: cover;   /* image crop hoke proper fit hogi */
+    width: 100%;
+  }
+
+  .card {
+    overflow: hidden;
+    border-radius: 12px;
+  }
+
+  .card img {
+    transition: 0.4s ease;
+  }
+
+  .card:hover img {
+    transform: scale(1.05);
+  }
 </style>
 </head>
 <body>
@@ -230,39 +248,63 @@
 <section id="events" class="py-5 bg-light" data-aos="fade-up">
   <div class="container">
     <h2 class="text-center mb-5 display-4 fw-bold text-danger">Upcoming Events</h2>
+
     <div class="row">
-      
+
+      <!-- Card 1 -->
       <div class="col-12 col-md-6 col-lg-4 mb-4">
         <div class="card border-0 shadow h-100">
-          <img src="images/temple-images/shiv1.jpg" class="card-img-top" alt="Monthly Rudrabhishek">
-          <div class="card-body">
+          <img src="images/temple-images/shiv1.jpg"
+               class="card-img-top event-img"
+               alt="Monthly Rudrabhishek">
+
+          <div class="card-body d-flex flex-column">
             <h5 class="card-title">Monthly Rudrabhishek</h5>
-            <p class="card-text">Special Rudrabhishek is performed every Pradosh Vrat. Devotees can participate by prior registration.</p>
+            <p class="card-text">
+              Special Rudrabhishek is performed every Pradosh Vrat.
+              Devotees can participate by prior registration.
+            </p>
           </div>
         </div>
       </div>
+
+      <!-- Card 2 -->
       <div class="col-12 col-md-6 col-lg-4 mb-4">
         <div class="card border-0 shadow h-100">
-          <img src="images/temple-images/shiv2.jpg" class="card-img-top" alt="Monthly Rudrabhishek">
-          <div class="card-body">
+          <img src="images/temple-images/shiv2.jpg"
+               class="card-img-top event-img"
+               alt="Monthly Rudrabhishek">
+
+          <div class="card-body d-flex flex-column">
             <h5 class="card-title">Monthly Rudrabhishek</h5>
-            <p class="card-text">Special Rudrabhishek is performed every Pradosh Vrat. Devotees can participate by prior registration.</p>
+            <p class="card-text">
+              Special Rudrabhishek is performed every Pradosh Vrat.
+              Devotees can participate by prior registration.
+            </p>
           </div>
         </div>
       </div>
+
+      <!-- Card 3 -->
       <div class="col-12 col-md-6 col-lg-4 mb-4">
         <div class="card border-0 shadow h-100">
-          <img src="images/hanuman1.jpg" class="card-img-top" alt="Monthly Rudrabhishek">
-          <div class="card-body">
+          <img src="images/hanuman1.jpg"
+               class="card-img-top event-img"
+               alt="Monthly Rudrabhishek">
+
+          <div class="card-body d-flex flex-column">
             <h5 class="card-title">Monthly Rudrabhishek</h5>
-            <p class="card-text">Special Rudrabhishek is performed every Pradosh Vrat. Devotees can participate by prior registration.</p>
+            <p class="card-text">
+              Special Rudrabhishek is performed every Pradosh Vrat.
+              Devotees can participate by prior registration.
+            </p>
           </div>
         </div>
       </div>
+
     </div>
   </div>
 </section>
-
 <!-- Gallery -->
 <section id="gallery" class="py-5 bg-white" data-aos="fade-up">
   <div class="container">
