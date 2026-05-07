@@ -151,6 +151,36 @@
     transform: scale(1.05);
   }
 </style>
+
+<!-- Custom CSS -->
+<style>
+  .about-section {
+    position: relative;
+    background-image: url('images/shivling-abhishek.jpg');
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+  }
+
+  .about-section .overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+  }
+
+  .about-card {
+    background: rgba(255, 255, 255, 0.95);
+    transition: 0.4s ease;
+  }
+
+  .about-card:hover {
+    transform: translateY(-8px);
+  }
+
+  .card-text {
+    text-align: justify;
+  }
+</style>
 </head>
 <body>
 
@@ -187,33 +217,97 @@
 </section>
 
 
-<!-- About -->
-<section id="about" class="py-5" style="background-color: #f9f3e1; background-image: url('images/shivling-abhishek.jpg'); background-size: cover; background-position: center;" data-aos="fade-up">
-  <div class="container">
-    <h2 class="text-center text-dark mb-5 display-4" style="font-family: 'Vollkorn', serif; font-weight: bold;">About the Temple</h2>
-    <div class="row justify-content-center">
-      <div class="col-12 col-md-6 col-lg-4 mb-4">
-        <div class="card shadow-lg border-0 rounded-3 p-4 text-center">
-          <div class="card-body">
-            <i class="bi bi-building text-primary mb-3" style="font-size: 3rem;"></i>
-            <p class="card-text" style="font-size: 1.1rem;">Shiv Temple is a sacred place dedicated to Lord Shiva. Built in traditional Indian architecture, it stands as a symbol of peace, devotion, and spirituality.</p>
+<!-- About Section -->
+<section id="about" class="py-5 about-section" data-aos="fade-up">
+
+  <div class="overlay"></div>
+
+  <div class="container position-relative">
+    
+    <!-- Heading -->
+    <h2 class="text-center text-white mb-5 display-4 fw-bold"
+        style="font-family: 'Vollkorn', serif;">
+      About the Temple
+    </h2>
+
+    <div class="row justify-content-center g-4">
+
+      <!-- Main About Card -->
+      <div class="col-lg-8">
+        <div class="card shadow-lg border-0 rounded-4 h-100 about-card">
+          <div class="card-body p-5 text-center">
+
+            <i class="bi bi-building text-danger mb-4"
+               style="font-size: 3.5rem;"></i>
+
+            <p class="card-text fs-5 text-dark lh-lg">
+
+              Shiv Family Temple is a sacred temple located in
+              <strong>Bhumbhuwar, Korari Kalan, Unnao, Uttar Pradesh</strong>.
+              The temple is dedicated to <strong>Lord Shiva</strong> and the divine
+              Shiv Parivar including <strong>Maa Parvati, Lord Ganesha,
+              Lord Kartikeya, Nandi Maharaj, and Lord Hanuman</strong>.
+
+              <br><br>
+
+              The temple is a center of faith and devotion where devotees
+              visit daily to seek blessings, peace, and spiritual positivity.
+              The calm and divine atmosphere of the temple makes it a peaceful
+              place for prayer and meditation.
+
+              <br><br>
+
+              Special celebrations are organized during
+              <strong>Mahashivratri, Shravan Maas, and Pradosh Vrat</strong>,
+              attracting devotees from nearby villages and surrounding areas.
+
+            </p>
+
+            <h4 class="mt-4 text-danger fw-bold">
+              “ॐ नमः शिवाय”
+            </h4>
+
           </div>
         </div>
       </div>
-      <div class="col-12 col-md-6 col-lg-4 mb-4">
-        <div class="card shadow-lg border-0 rounded-3 p-4 text-center">
-          <div class="card-body">
-            <i class="bi bi-house-door text-primary mb-3" style="font-size: 3rem;"></i>
-            <p class="card-text" style="font-size: 1.1rem;">Located in the heart of Unnao, the temple welcomes devotees for daily rituals, spiritual programs, and major festivals like Maha Shivratri.</p>
+
+      <!-- Extra Info Card -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card shadow-lg border-0 rounded-4 h-100 about-card">
+          <div class="card-body p-4 text-center">
+
+            <i class="bi bi-house-heart text-danger mb-4"
+               style="font-size: 3rem;"></i>
+
+            <h4 class="fw-bold mb-3">
+              Divine Atmosphere
+            </h4>
+
+            <p class="card-text fs-5 text-dark lh-lg">
+              The temple welcomes devotees every day for darshan,
+              prayer, and spiritual peace. Its serene environment
+              inspires faith, devotion, and positivity among visitors.
+            </p>
+
           </div>
         </div>
       </div>
+
     </div>
-    <div class="text-center mt-4">
-      <p class="lead text-muted" style="font-size: 1.1rem; font-style: italic;">"A place of divine worship and spiritual connection. Visit us and experience the serenity and blessings of Lord Shiva."</p>
+
+    <!-- Bottom Quote -->
+    <div class="text-center mt-5">
+      <p class="lead text-white fw-semibold"
+         style="font-style: italic;">
+
+        "A sacred place where devotion meets peace and spirituality."
+
+      </p>
     </div>
+
   </div>
 </section>
+
 
 <!-- Rituals -->
 <section id="rituals" class="py-5" style="background: linear-gradient(to right, #f9e4b7, #f2d2a1);" data-aos="fade-right">
@@ -461,7 +555,7 @@
 <footer class="py-4 bg-danger text-white text-center">
   <div class="container">
     <p class="mb-0">© 2025 Shiv Temple, Unnao. All rights reserved.</p>
-    <small>Developed with ❤️ by Temple Committee</small>
+    <small>Designed with ❤️ by Tanu Bajpai</small>
   </div>
 </footer>
 
